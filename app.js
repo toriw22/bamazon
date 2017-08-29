@@ -43,13 +43,12 @@ function askItems () {
 					var done = this.async();
 					setTimeout(function(){
 						var inputInt = parseInt(input);
-						console.log(typeof inputInt);
-						if (inputInt == NaN) {
-							done("Please provide a number to select the desired quantity.");
+						if (isNaN(inputInt) == true) {
+							done("Please enter a number to select the desired quantity.");
 							return;
 						}
 					done(null, true);
-					}, 3000);
+					}, 300);
 				}
 			}
 		]).then(function(choice) {
